@@ -1,5 +1,5 @@
 /*
- * jquery.closestchild 0.1.0
+ * jquery.closestchild 0.1.1
  *
  * Author: Andrey Mikhaylov aka lolmaus
  * Email: lolmaus@gmail.com
