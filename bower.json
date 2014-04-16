@@ -1,0 +1,22 @@
+{
+  "name": "jquery.closestchild",
+  "version": "0.1.0",
+  "homepage": "https://github.com/lolmaus/jquery.closestchild",
+  "authors": ["Andrey Mikhaylov aka lolmaus <lolmaus@gmail.com>"],
+  "description": "An opposite of `closest()`: find the nearest child that matches a selector, ignore deeper matching children.",
+  "main": "jquery.closestchild.js",
+  "keywords": [
+    "jquery.closestchild",
+    "jquery-closestchild",
+    "closestchild",
+    "closest child",
+    "closest",
+    "nearest",
+    "nearestchild",
+    "nearest child"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}
