@@ -115,6 +115,11 @@ Please keep in mind the following features:
 This behavior is different from [jquery-nearest](https://github.com/jstnjns/jquery-nearest) which would traverse each branch of the DOM tree as deep as it goes. jquery-nearest only prevents traversing inside matched elements.
 
 
+## Demo
+
+See jquery.closestchild in action: http://lolmaus.github.io/jquery.closestchild/ .
+
+
 ## Credit
 
 Created by [Andrey Mikhaylov aka lolmaus](http://github.com/lolmaus/).
