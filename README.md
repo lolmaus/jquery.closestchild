@@ -110,7 +110,7 @@ Please keep in mind the following features:
 
 * It starts matching with the children of the given element (unlike `.closest()` which starts matching with the element itself).
 * It traverses the tree of children one step at a time. It can return multpile elements if they are found on the same level of depth.
-* Once at least match is found, it returns the match(es) and stops traversing, saving performance.
+* Once at least one match is found, it returns the match(es) and stops traversing, saving performance.
 
 This behavior is different from [jquery-nearest](https://github.com/jstnjns/jquery-nearest) which would traverse each branch of the DOM tree as deep as it goes. jquery-nearest only prevents traversing inside matched elements.
 
