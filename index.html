@@ -1,91 +1,130 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>jquery.closestchild demo</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jquery.closestchild demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <style>
-          body {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 1em;
-          }
-          
-          code, pre {
-            background-color: #eee;
-            border: 1px solid #ddd;
-            border-radius: 2px;
-            padding: 1px 2px;
-          }
-          
-          pre {
-            padding: 10px;
-          }
-          
-         .module:not(:last-child), .module div:not(:last-child) {
-            margin-bottom: 5%;
-          }
-          
-          .module, .module div {
-            border: 1px dotted white;
-            padding: 5%;
-          }
-          
-          .module, .module .module {
-            border-style: solid;
-            border-width: 6px;
-            background-color: rgba(0,0,128,0.3);
-            color: white;
-            font-weight: bold;
-          }
-          
-          .module._root {
-            border-color: #55f;
-          }
-          
-          #target {
-            border-color: red;
-          }
-        </style>
-    </head>
-    <body>
-        <h1>jquery.closestchild demo</h1>
+    <style>
+      body {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1em;
+      }
+
+      @media (max-height: 599px) and (min-width: 800px) {
+        .info {
+          float: left;
+          width: 48%;
+        }
         
-        <p>This is a demo of the <a href="https://github.com/lolmaus/jquery.closestchild/">jquery.closestchild</a> plugin.</p>
+        .demo {
+          float: right;
+          width: 48%;
+        }
+      }
+      
+      @media (min-height: 600px) and (min-width: 800px) {
+        .info {
+          position: fixed;
+          background-color: red;
+          width: 400px;
+        }
         
-        <p>Open the source of this page to dig into details or use a <a href="http://jsbin.com/qaqil/1/edit?html,css,js,output">copy of this demo on JSBin</a> to get your hands dirty.</p>
-        
-        <p>Below is a nested tree of identical HTML modules. Each module has this structure:</p>
-        
-        <pre>&lt;div class="module">
-  module
-  &lt;div class="module-title">title&lt;/div>
-  &lt;div class="module-foo">
-    foo
-    &lt;div class="module-bar">bar&lt;/div>
-  &lt;/div>
-  &lt;div class="module-children">
-    children
-    &lt;!-- child modules go here -->
-  &lt;/div>
+        .demo {
+          margin-left: 450px;
+        }
+      }
+      
+      h1 {
+        margin-top: 0;
+      }
+      
+      code, pre {
+        background-color: #eee;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        padding: 1px 2px;
+      }
+      
+      pre {
+        padding: 10px;
+      }
+      
+     .module:not(:last-child), .module div:not(:last-child) {
+        margin-bottom: 5%;
+      }
+      
+      .module, .module div {
+        border: 1px dotted white;
+        padding: 5%;
+      }
+      
+      .module, .module .module {
+        border-style: solid;
+        border-width: 6px;
+        background-color: rgba(0,0,128,0.3);
+        color: white;
+        font-weight: bold;
+      }
+      
+      .module._root {
+        border-color: #55f;
+      }
+      
+      #target {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info">
+      <h1>jquery.closestchild demo</h1>
+      
+      <p>This is a demo of the <a href="https://github.com/lolmaus/jquery.closestchild/">jquery.closestchild</a> plugin.</p>
+      
+      <p>Open the source of this page to dig into details or use a <a href="http://jsbin.com/qaqil/5/edit?html,js,output">copy of this demo on JSBin</a> to get your hands dirty.</p>
+      
+      <p>Below is a nested tree of identical HTML modules. Each module has this structure:</p>
+      
+      <pre>&lt;div class="module">
+module
+&lt;div class="module-title">title&lt;/div>
+&lt;div class="module-foo">
+  foo
+  &lt;div class="module-bar">bar&lt;/div>
+&lt;/div>
+&lt;div class="module-children">
+  children
+  &lt;!-- child modules go here -->
+&lt;/div>
 &lt;/div></pre>
-        
-        <p>One module has been marked with a <code>#target</code> id, it is highlighted with a red outline via CSS. The following code is applied to the highlighted module:</p>
-        
-        <pre>$('#target')
-  .closestChild('.module-bar')
-  .css('background-color', 'red');</pre>
-        
-        <p>Note that only target's own instance of <code>.module-bar</code> is highlighted with red background.</p>
-        
-        <div class="demo">
-          <div class="module _root">
+      
+      <p>One module has been marked with a <code>#target</code> id, it is highlighted with a red outline via CSS. The following code is applied to the highlighted module:</p>
+      
+      <pre>$('#target')
+.closestChild('.module-bar')
+.css('background-color', 'red');</pre>
+      
+      <p>Note that only target's own instance of <code>.module-bar</code> is highlighted with red background.</p>
+    </div> <!-- /info -->
+      
+    <div class="demo">
+      <div class="module _root">
+        module
+        <div class="module-title">title</div>
+        <div class="module-foo">
+          foo
+          <div class="module-bar">bar</div>
+        </div>
+        <div class="module-children">
+          children
+          <div class="module" id="target">
             module
             <div class="module-title">title</div>
             <div class="module-foo">
@@ -94,7 +133,7 @@
             </div>
             <div class="module-children">
               children
-              <div class="module" id="target">
+              <div class="module">
                 module
                 <div class="module-title">title</div>
                 <div class="module-foo">
@@ -103,108 +142,6 @@
                 </div>
                 <div class="module-children">
                   children
-                  <div class="module">
-                    module
-                    <div class="module-title">title</div>
-                    <div class="module-foo">
-                      foo
-                      <div class="module-bar">bar</div>
-                    </div>
-                    <div class="module-children">
-                      children
-                      <div class="module">
-                        module
-                        <div class="module-title">title</div>
-                        <div class="module-foo">
-                          foo
-                          <div class="module-bar">bar</div>
-                        </div>
-                        <div class="module-children">
-                          children
-                          <div class="module">
-                            module
-                            <div class="module-title">title</div>
-                            <div class="module-foo">
-                              foo
-                              <div class="module-bar">bar</div>
-                            </div>
-                            <div class="module-children">children</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="module">
-                    module
-                    <div class="module-title">title</div>
-                    <div class="module-foo">
-                      foo
-                      <div class="module-bar">bar</div>
-                    </div>
-                    <div class="module-children">
-                      children
-                      <div class="module">
-                        module
-                        <div class="module-title">title</div>
-                        <div class="module-foo">
-                          foo
-                          <div class="module-bar">bar</div>
-                        </div>
-                        <div class="module-children">children</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="module">
-                    module
-                    <div class="module-title">title</div>
-                    <div class="module-foo">
-                      foo
-                      <div class="module-bar">bar</div>
-                    </div>
-                    <div class="module-children">
-                      children
-                      <div class="module">
-                        module
-                        <div class="module-title">title</div>
-                        <div class="module-foo">
-                          foo
-                          <div class="module-bar">bar</div>
-                        </div>
-                        <div class="module-children">
-                          children
-                          <div class="module">
-                            module
-                            <div class="module-title">title</div>
-                            <div class="module-foo">
-                              foo
-                              <div class="module-bar">bar</div>
-                            </div>
-                            <div class="module-children">children</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="module">
-                    module
-                    <div class="module-title">title</div>
-                    <div class="module-foo">
-                      foo
-                      <div class="module-bar">bar</div>
-                    </div>
-                    <div class="module-children">
-                      children
-                      <div class="module">
-                        module
-                        <div class="module-title">title</div>
-                        <div class="module-foo">
-                          foo
-                          <div class="module-bar">bar</div>
-                        </div>
-                        <div class="module-children">children</div>
-                      </div>
-                    </div>
-                  </div>
                   <div class="module">
                     module
                     <div class="module-title">title</div>
@@ -275,6 +212,26 @@
                         <div class="module-children">children</div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="module">
+                module
+                <div class="module-title">title</div>
+                <div class="module-foo">
+                  foo
+                  <div class="module-bar">bar</div>
+                </div>
+                <div class="module-children">
+                  children
+                  <div class="module">
+                    module
+                    <div class="module-title">title</div>
+                    <div class="module-foo">
+                      foo
+                      <div class="module-bar">bar</div>
+                    </div>
+                    <div class="module-children">children</div>
                   </div>
                 </div>
               </div>
@@ -300,15 +257,88 @@
               </div>
             </div>
           </div>
-          
-        </div><!-- /demo -->
+          <div class="module">
+            module
+            <div class="module-title">title</div>
+            <div class="module-foo">
+              foo
+              <div class="module-bar">bar</div>
+            </div>
+            <div class="module-children">
+              children
+              <div class="module">
+                module
+                <div class="module-title">title</div>
+                <div class="module-foo">
+                  foo
+                  <div class="module-bar">bar</div>
+                </div>
+                <div class="module-children">children</div>
+              </div>
+            </div>
+          </div>
+          <div class="module">
+            module
+            <div class="module-title">title</div>
+            <div class="module-foo">
+              foo
+              <div class="module-bar">bar</div>
+            </div>
+            <div class="module-children">
+              children
+              <div class="module">
+                module
+                <div class="module-title">title</div>
+                <div class="module-foo">
+                  foo
+                  <div class="module-bar">bar</div>
+                </div>
+                <div class="module-children">
+                  children
+                  <div class="module">
+                    module
+                    <div class="module-title">title</div>
+                    <div class="module-foo">
+                      foo
+                      <div class="module-bar">bar</div>
+                    </div>
+                    <div class="module-children">children</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="module">
+            module
+            <div class="module-title">title</div>
+            <div class="module-foo">
+              foo
+              <div class="module-bar">bar</div>
+            </div>
+            <div class="module-children">
+              children
+              <div class="module">
+                module
+                <div class="module-title">title</div>
+                <div class="module-foo">
+                  foo
+                  <div class="module-bar">bar</div>
+                </div>
+                <div class="module-children">children</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div><!-- /demo -->
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="https://cdn.rawgit.com/lolmaus/jquery.closestchild/v0.1.1/jquery.closestchild.js"></script>
-        <script>
-          $('#target')
-            .closestChild('.module-bar')
-            .css('background-color', 'red');
-        </script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/lolmaus/jquery.closestchild/v0.1.1/jquery.closestchild.js"></script>
+    <script>
+      $('#target')
+        .closestChild('.module-bar')
+        .css('background-color', 'red');
+    </script>
+  </body>
 </html>
