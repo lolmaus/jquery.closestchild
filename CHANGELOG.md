@@ -3,9 +3,10 @@
 
 ## master
 
-**2014-04-16**
+**2014-04-17**
 
-* Mentioned demo in the readme.
+* Mentioned static demo in the readme.
+* Mentioned JSBindemo in the readme.
 
 
 ## v0.1.1
