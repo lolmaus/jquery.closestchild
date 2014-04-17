@@ -120,7 +120,7 @@ This behavior is different from [jquery-nearest](https://github.com/jstnjns/jque
 See jquery.closestchild in action:
 
   * [static demo](http://lolmaus.github.io/jquery.closestchild/);
-  * [JSBin demo](http://jsbin.com/qaqil/1/edit?html,css,js,output).
+  * [JSBin demo](http://jsbin.com/qaqil/7/edit?html,js,output).
 
 
 ## Credit
