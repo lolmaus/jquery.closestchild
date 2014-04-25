@@ -96,7 +96,7 @@ Require `jquery.closestchild` after jQuery:
 
 ## Usage
 
-```
+```js
 $('.some-element').closestChild( selector )
 ```
 
@@ -121,6 +121,20 @@ See jquery.closestchild in action:
 
   * [static demo](http://lolmaus.github.io/jquery.closestchild/);
   * [JSBin demo](http://jsbin.com/qaqil/7/edit?html,js,output).
+
+
+## Performance
+
+Here's a straighforward way of selecting the closest child (suggested by [adeneo](http://stackoverflow.com/users/965051/adeneo) on [StackOverflow](http://stackoverflow.com/a/23114853)):
+
+```js
+var $element = $('.some-element');
+$element.find('.child').filter(function() {
+  return $(this).closest('.some-element').get(0) === $element.get(0);
+});
+```
+
+Here's a performance comparison of this method against jquery-closestchild: http://jsperf.com/closestchild#runner . jquery-closest child turns out to be 4 to 5 times faster in this benchmark. The difference in speed should be proportional to the depth of the DOM tree.
 
 
 ## Credit
