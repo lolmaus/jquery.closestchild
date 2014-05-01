@@ -136,6 +136,8 @@ $element.find('.child').filter(function() {
 
 Here's a performance comparison of this method against jquery-closestchild: http://jsperf.com/closestchild#runner . jquery-closest child turns out to be 4 to 5 times faster in this benchmark. The difference in speed should be proportional to the depth of the DOM tree.
 
+Note that when compared to a pure `.find()` without filtering, `.closestChild()` performs much slower. In other words, if you don't need to filter out deeper children, you should use `.find()` even when the sought element is located closer to the top of the tree. That's because pure `.find()` leverages browser optimizations while `.closestChild()` traverses the tree manually. Don't use `.closestChild()` where `.find()` without filtering can do the job.
+
 
 ## Credit
 
