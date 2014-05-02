@@ -134,11 +134,11 @@ $parent.find('.child').filter(function() {
 });
 ```
 
-Here's a performance comparison of this method against jquery-closestchild: http://jsperf.com/closestchild#runner . jquery-closest child turns out to be 4 to 5 times faster in this benchmark. The difference in speed should be proportional to the depth of the DOM tree.
+Here's a performance comparison of this method against jquery-closestchild: http://jsperf.com/closestchild#runner . jquery-closest child turns out to be 4 to 5 times faster in this benchmark. The difference in speed is proportional to the depth and branchiness of the DOM tree.
 
-Note, that the performance benefit exists only on relatively complicated, branchy DOM trees. If your HTML structure resembles a single regular staircase (e. g. `<div> <div> <div> </div> </div> </div>`), the `.find().filter()` may be faster.
+Note, that if your HTML structure is not branchy (e. g. `<div> <div> <div> </div> </div> </div>`), the `.find().filter()` may appear faster.
 
-Also note that pure `.find()` without filtering always performs *much* faster. If you don't need to filter out deeper children, you should use `.find()` even when the sought element is located closer to the top of the tree. That's because pure `.find()` leverages browser optimizations while `.closestChild()` traverses the tree manually. In other words, don't use `.closestChild()` where `.find()` without filtering can do the job.
+Also note that pure `.find()` without filtering always performs *much* faster. If you don't need to filter out deeper children, you should prefer `.find()` over `.closestChild()` even if you know that the sought element is near the start of the tree. That's because pure `.find()` leverages browser optimizations whereas `.closestChild()` traverses the tree step by step. In other words, never use `.closestChild()` where `.find()` without filtering can do the job.
 
 
 ## Credit
