@@ -9,7 +9,8 @@
   * Mentioned static demo.
   * Mentioned JSBin demo.
   * Added performance benchmark.
-  * Added a warning to prefer .find() if possible.
+  * Added a warning to prefer `.find()` if possible.
+  * Added a warning that `.find().filter()` may be faster on non-branchy structures.
 
 No code changes so far.
 
